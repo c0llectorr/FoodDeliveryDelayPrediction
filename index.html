@@ -1,0 +1,91 @@
+<!-- app/templates/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Food Delivery Delay Predictor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Food Delivery Delay Predictor</h1>
+    <form action="{{ url_for('predict') }}" method="post" class="form">
+      <label>Distance (km)
+        <input type="number" name="Distance_km" step="0.01" min="0" required>
+      </label>
+
+      <label>Weather
+        <select name="Weather" required>
+          <option>Clear</option>
+          <option>Cloudy</option>
+          <option>Rain</option>
+          <option>Storm</option>
+          <option>Snow</option>
+        </select>
+      </label>
+
+      <label>Traffic Level
+        <select name="Traffic_Level" required>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select>
+      </label>
+
+      <label>Time of Day
+        <select name="Time_of_Day" required>
+          <option>Morning</option>
+          <option>Afternoon</option>
+          <option>Evening</option>
+          <option>Night</option>
+        </select>
+      </label>
+
+      <label>Vehicle Type
+        <select name="Vehicle_Type" required>
+          <option>Bike</option>
+          <option>Scooter</option>
+          <option>Motorbike</option>
+          <option>Car</option>
+        </select>
+      </label>
+
+      <label>Preparation Time (minutes)
+        <input type="number" name="Preparation_Time_min" step="0.01" min="0" required>
+      </label>
+
+      <label>Courier Experience (years)
+        <input type="number" name="Courier_Experience_yrs" step="0.1" min="0" required>
+      </label>
+
+      <div class="actions">
+        <button type="submit">Predict</button>
+      </div>
+    </form>
+
+    {% if regression_result is defined %}
+      <div class="result">
+        <h2>Results</h2>
+        <p><strong>Predicted Delivery Time:</strong> {{ regression_result }} minutes</p>
+        {% if classification_label is not none %}
+          <p><strong>Predicted Is Late:</strong> {{ 'Yes' if classification_label else 'No' }}</p>
+        {% endif %}
+        {% if classification_prob is not none %}
+          <p><strong>Probability of Being Late:</strong> {{ classification_prob }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if error_msg is defined %}
+      <div class="error">
+        <p>{{ error_msg }}</p>
+      </div>
+    {% endif %}
+
+    <footer>
+      <small>Make sure model .joblib files are in the app folder.</small>
+    </footer>
+  </div>
+</body>
+</html>
