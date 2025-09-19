@@ -13,8 +13,8 @@ app = Flask(__name__)
 BASE_DIR = os.path.dirname(__file__)
 MODELS_DIR = os.path.normpath(os.path.join(BASE_DIR, "..", "models"))
 
-REG_MODEL_PATH = os.path.join(MODELS_DIR, r"C:\Users\ilaib\OneDrive\Desktop\food_delivery_app\models\xgb_regression_model.joblib")
-CLF_MODEL_PATH = os.path.join(MODELS_DIR, r"C:\Users\ilaib\OneDrive\Desktop\food_delivery_app\models\xgb_classifier_model.joblib")
+REG_MODEL_PATH = os.path.join(MODELS_DIR, r"time_prediction_model/xgb_regression_model.joblib")
+CLF_MODEL_PATH = os.path.join(MODELS_DIR, r"late_delivery_model/xgb_classifier_model.joblib")
 
 def safe_load(path):
     try:
@@ -168,4 +168,4 @@ def predict():
                            classification_prob=result["late_probability"])
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5050)
