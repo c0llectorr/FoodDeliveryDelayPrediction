@@ -241,7 +241,7 @@ Both models demonstrated strong performance in their respective tasks:
 
 Our Power BI dashboard provides visual insights into delivery patterns and performance:
 
-![Dashboard Preview](https://drive.google.com/file/d/1NueAXD6s1vOV3-xhCM4u5CpoTPpWPJ-w/view?usp=sharing)
+![Dashboard Preview](https://drive.google.com/file/d/1Yh4oBmCBLtuLP63_bCLxFwx3T9tdHlwz/view?usp=sharing)
 
 ### Dashboard Features
 1. **Order Volume Analysis**: Distribution by time of day, weather, and traffic conditions
