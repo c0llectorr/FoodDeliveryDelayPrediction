@@ -1,8 +1,8 @@
-
-
 # Food Delivery Delay Prediction
 
 ![Project Logo](https://img.shields.io/badge/Project-Food%20Delivery%20Delay%20Prediction-blue) ![Status](https://img.shields.io/badge/Status-Complete-brightgreen) ![Language](https://img.shields.io/badge/Language-Python-yellow) ![Framework](https://img.shields.io/badge/Framework-Flask-green)
+
+## ![**Project Article**](https://medium.com/@mahmdshafee/the-journey-of-building-a-food-delivery-delay-prediction-system-from-data-to-dashboard-9cf735ebd18e) 
 
 ## 📋 Project Overview
 
@@ -241,7 +241,7 @@ Both models demonstrated strong performance in their respective tasks:
 
 Our Power BI dashboard provides visual insights into delivery patterns and performance:
 
-![Dashboard Preview](https://drive.google.com/file/d/1Yh4oBmCBLtuLP63_bCLxFwx3T9tdHlwz/view?usp=sharing)
+![Dashboard Preview](./dashboard/Food%20Delivery%20Time%20Analysis.pdf)
 
 ### Dashboard Features
 1. **Order Volume Analysis**: Distribution by time of day, weather, and traffic conditions
